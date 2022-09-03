@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Crewmember</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div id="container">
+    </form>
+    <form data-th-action="@{/crewmember}" method="post" data-th-object="${newMember}">
+        <table>
+            <tr>
+                <th>Name of the new Crew member:</th>
+                <td><input type="text" data-th-field="*{crewName}"></td>
+            </tr>
+            <tr>
+                <th>Rank:</th>
+                <td>
+                    <select data-th-field="*{crewRank}">
+                        <option data-th-each="rank : ${crewRanks}"
+                                data-th-value="${rank}"
+                                data-th-text="${rank}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Registration code of the Duty ship:</th>
+                <td><input type="text" data-th-field="*{dutyShip}"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Létrehozás</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+</body>
+
+</html>

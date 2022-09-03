@@ -3,25 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Új űrhajó</title>
+    <title>New Spaceship</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
 <div id="container">
-
-    <form data-th-object="${newShip}">
-
-        <select data-th-field="*{spaceShipClass}">
-            <option data-th-each="shipClass : ${shipClasses}"
-                    data-th-value="${shipClass}"
-                    data-th-text="${shipClass}">
-            </option>
-        </select>
-
     </form>
+    <form data-th-action="@{/spaceship}" method="post" data-th-object="${newShip}">
+        <table>
+            <tr>
+                <th>Name of the new Ship:</th>
+                <td><input type="text" data-th-field="*{name}"></td>
+            </tr>
+            <tr>
+                <th>Class of the new Ship:</th>
+                <td>
+                    <select data-th-field="*{spaceShipClass}">
+                        <option data-th-each="shipClass : ${shipClasses}"
+                                data-th-value="${shipClass}"
+                                data-th-text="${shipClass}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Létrehozás</button>
+                </td>
+            </tr>
 
+        </table>
+    </form>
 </div>
 
 </body>

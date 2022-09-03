@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crew Members</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<button class="button" onclick="location.href= '/search_crewmember'" type="button">
+    Search in crew members</button>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Rang</th>
+        <th>Name of the Ship</th>
+    </tr>
+    <tr data-th-each="crew : ${crewmembers}">
+        <td data-th-text="${crew.crewName}"></td>
+        <td data-th-text="${crew.crewRank}"></td>
+        <td data-th-text="${crew.dutyShip}"></td>
+    </tr>
+</table>
+</body>
+</html>

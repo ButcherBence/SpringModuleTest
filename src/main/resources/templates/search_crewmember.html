@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crew Member Search</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h3>Termék keresése:</h3>
+<form data-th-action="@{/search_crewmember}" data-th-object="${form}" method="post">
+    <table>
+        <tr>
+            <th>Name:</th>
+            <td><input type="text" data-th-field="*{name}" /></td>
+        </tr>
+        <td colspan="2"><button class="button"; type="submit">Search</button></td>
+        </tr>
+    </table>
+</form>
+<h3>Result </h3>
+<table>
+    <tr>
+        <th>Cikkszám</th>
+    </tr>
+    <tr data-th-each="result: ${result}">
+        <td data-th-text="${result.crewName}"></td>
+        <td data-th-text="${result.crewRank}"></td>
+        <td data-th-text="${result.dutyShip}"></td>
+
+    </tr>
+</table>
+</body>
+</html>

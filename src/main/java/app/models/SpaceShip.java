@@ -97,6 +97,7 @@ public class SpaceShip {
         isActive = active;
     }
 
+
     public List<Crew> getCrews() {
         if (crews == null) {
             crews = new ArrayList<>();
@@ -109,4 +110,8 @@ public class SpaceShip {
         this.crews = crews;
     }
 
+    @Override
+    public String toString() {
+        return  name;
+    }
 }

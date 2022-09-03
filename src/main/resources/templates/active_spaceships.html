@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Active spaceships</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Registration code</th>
+        <th>Name</th>
+        <th>Spaceship Class</th>
+        <th>Is Active</th>
+    </tr>
+    <tr data-th-each="spaceship : ${spaceships}">
+        <td data-th-text="${spaceship.registrationCode}"></td>
+        <td data-th-text="${spaceship.name}"></td>
+        <td data-th-text="${spaceship.spaceShipClass}"></td>
+        <td data-th-text="${spaceship.isActive}"></td>
+    </tr>
+</table>
+<button class="button" onclick="location.href= '/spaceships'" type="button">
+    All ship</button>
+</body>
+</html>
