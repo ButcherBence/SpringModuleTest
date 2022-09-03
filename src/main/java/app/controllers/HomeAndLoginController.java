@@ -35,7 +35,7 @@ public class HomeAndLoginController {
     }
 
     @GetMapping("/register")
-    public String addStudent(Model model){
+    public String addOfficer(Model model){
         Officer officer = new Officer();
         model.addAttribute("officer", officer);
 
@@ -43,7 +43,7 @@ public class HomeAndLoginController {
     }
 
     @PostMapping("/register")
-    public String addStudent(Officer officer){
+    public String addOfficer(Officer officer){
         if (!(officerService.isUsernameAlreadyInUse(officer))) {
             officerService.saveOfficer(officer);
 
